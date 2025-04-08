@@ -1,0 +1,7 @@
+rbacProxy:
+  image:
+    tag: v0.13.1
+
+manager:
+  image:
+    tag: v1.1.10

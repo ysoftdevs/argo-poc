@@ -1,0 +1,7 @@
+rbacProxy:
+  image:
+    repository: 981311310930.dkr.ecr.eu-west-1.amazonaws.com/system_apps/kube-rbac-proxy
+
+manager:
+  image:
+    repository: 981311310930.dkr.ecr.eu-west-1.amazonaws.com/system_apps/dragonfly-operator

@@ -1,0 +1,12 @@
+dragonfly-operator:
+
+  chart:
+    sourceRepo:  https://art.corp.ysoft.com/artifactory/helm-internal/
+
+  rbacProxy:
+    image:
+      sourceRepo: docker.dragonflydb.io/dragonflydb/operator
+
+  manager:
+    image:
+      sourceRepo: quay.io/brancz/kube-rbac-proxy
