@@ -2,3 +2,6 @@ server:
   ingress:
     enabled: true
     hostname: "web.control-plane-dev.ysoft-dev.com"
+
+image:
+  tag: v3.0.0-rc3
