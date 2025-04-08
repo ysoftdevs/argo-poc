@@ -1,3 +1,4 @@
-ingress:
-  enabled: true
-  hostname: "web.control-plane-dev.ysoft-dev.com"
+server:
+  ingress:
+    enabled: true
+    hostname: "web.control-plane-dev.ysoft-dev.com"
