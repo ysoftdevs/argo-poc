@@ -6,3 +6,7 @@ server:
 global:
   image:
     tag: v3.0.0-rc3
+
+configs:
+  params:
+    server.insecure: true
