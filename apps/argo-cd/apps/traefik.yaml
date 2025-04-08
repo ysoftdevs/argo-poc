@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: traefik # Name of the application in Argo CD
-  namespace: traefik # Namespace where Argo CD is installed
+  namespace: argocd # Namespace where Argo CD is installed
 spec:
   project: default # Argo CD project for the application (can be 'default' or custom)
   source:
