@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik # Name of the application in Argo CD
+  namespace: traefik # Namespace where Argo CD is installed
+spec:
+  project: default # Argo CD project for the application (can be 'default' or custom)
+  source:
+    repoURL: https://github.com/ysoftdevs/argo-poc # Git repository URL
+    targetRevision: HEAD # Git branch/tag/commit to sync (e.g., 'main' or 'v1.0')
+    path: helm-repo/traefik/traefik-35.0.0 # Path to the application directory or manifests inside the repo
+    helm:
+      valueFiles:
+        - /apps/traefik/values/dev-values.yaml
+  destination:
+    server: https://kubernetes.default.svc # Cluster where the app will be deployed (use default for in-cluster)
+    namespace: traefik # Kubernetes namespace for the application
+  syncPolicy:
+    automated:
+      prune: true # Auto-prune resources that are no longer in the repository
+      selfHeal: true # Auto-correct drift from the desired state
+    syncOptions:
+      - CreateNamespace=true # Automatically create the namespace if it doesn't exist
