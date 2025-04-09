@@ -43,7 +43,7 @@ spec:
               # As a side effect, it also allows access to previously defined values, like '.values.stageName'
               elements:
                 # The selector also had troubles with booleans vs. strings, hence the 'yes' and not 'true'
-                - enabled: '{{ dig "stages" .values.stageName "enabled" false . | ternary "yes" "" }}'
+                - enabled: '{{ dig "clusters" .values.stageName .values.clusterName "enabled" false . | ternary "yes" "" }}'
                   appName: "{{ .path.basename }}"
             selector:
               matchLabels:
