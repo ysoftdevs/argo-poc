@@ -27,7 +27,7 @@ spec:
                 # The files are expected to contain {apiVersion: "ysoft.com/v1"}
                 - git:
                     repoURL: https://github.com/ysoftdevs/argo-poc.git
-                    revision: argocd
+                    revision: main
                     files:
                       - path: "apps/**/argocd.json"
                     values:
