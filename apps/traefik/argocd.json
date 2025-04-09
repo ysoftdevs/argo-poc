@@ -1,0 +1,41 @@
+{
+  "apiVersion": "ysoft.com/v1",
+  "source": {
+    "repoURL": "https://github.com/ysoftdevs/argo-poc.git",
+    "path": "helm-repo/traefik/traefik-35.0.0",
+    "chartRevision": "main",
+    "valuesRevision": "main",
+    "chart": ""
+  },
+  "destination": {
+    "namespace": "traefik"
+  },
+  "syncPolicy": {
+    "syncOptions": {
+      "ServerSideApply": true,
+      "CreateNamespace": true
+    }
+  },
+  "valueFiles": [
+    "values/registry/%provider%-%stage%-values.yaml",
+    "values/app-version/%stage%-values.yaml"
+  ],
+  "clusters": {
+    "dev": {
+      "control-plane-dev": {
+        "enabled": true
+      },
+      "ohio": {
+        "enabled": false
+      }
+    },
+    "prod": {
+      "control-plane": {
+        "enabled": true
+      },
+      "ireland": {
+        "enabled": false
+      }
+    }
+  }
+}

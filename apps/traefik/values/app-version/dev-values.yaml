@@ -1,0 +1,18 @@
+ingressClass:
+  enabled: true
+  isDefaultClass: true
+ingressRoute:
+  dashboard:
+    enabled: false
+service:
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+logs:
+  general:
+    level: DEBUG
+  access:
+    enabled: true
+    fields:
+      defaultMode: keep
+globalArguments:
+  - "--api.insecure=true"
