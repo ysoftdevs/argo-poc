@@ -1,7 +1,7 @@
 server:
   ingress:
     enabled: true
-    hostname: "web.control-plane-dev.ysoft-dev.com"
+    hostname: "argo.control-plane-dev.ysoft-dev.com"
 
 global:
   image:
