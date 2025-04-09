@@ -21,21 +21,12 @@
     "values/app-version/%stage%-values.yaml"
   ],
   "clusters": {
-    "dev": {
-      "control-plane-dev": {
-        "enabled": true
-      },
-      "ohio": {
-        "enabled": false
-      }
+    "control-plane-dev": {
+      "enabled": true,
+      "revision": "test"
     },
-    "prod": {
-      "control-plane": {
-        "enabled": true
-      },
-      "ireland": {
-        "enabled": false
-      }
+    "ohio": {
+      "enabled": false
     }
   }
 }

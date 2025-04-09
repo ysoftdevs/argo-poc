@@ -43,14 +43,14 @@ spec:
               # As a side effect, it also allows access to previously defined values, like '.values.stageName'
               elements:
                 # The selector also had troubles with booleans vs. strings, hence the 'yes' and not 'true'
-                - enabled: '{{ dig "clusters" .values.stageName .values.clusterName "enabled" false . | ternary "yes" "" }}'
+                - enabled: '{{ dig "clusters" .values.clusterName "enabled" false . | ternary "yes" "" }}'
                   appName: "{{ .path.basename }}"
             selector:
               matchLabels:
                 enabled: "yes"
   template:
     metadata:
-      name: "{{ .path.basename }}-{{.values.stageName }}-{{ .values.clusterName }}"
+      name: "{{ .path.basename }}-{{ .values.clusterName }}"
     spec:
       project: default
       destination:
@@ -68,12 +68,12 @@ spec:
         # First source is for value files
         # Default revision is HEAD but can be overriden with clusters.${name}.valuesRevision
         - repoURL: https://github.com/ysoftdevs/argo-poc.git
-          targetRevision: '{{ dig "stages" .values.stageName "valuesRevision" (dig "valuesRevision" "" .source) . }}'
+          targetRevision: '{{ dig "stages" .values.clusterName "valuesRevision" (dig "valuesRevision" "" .source) . }}'
           ref: values
         # Second source is for chart
         # Default revision is .source.targetRevision but can be overriden with clusters.${name}.chartRevision
         - repoURL: "{{ .source.repoURL }}"
-          targetRevision: '{{ dig "stages" .values.stageName "chartRevision" (dig "chartRevision" "" .source)  . }}'
+          targetRevision: '{{ dig "stages" .values.clusterName "chartRevision" (dig "chartRevision" "" .source)  . }}'
           ref: chart
           chart: '{{ default "" .source.chart }}'
           path: '{{ default "" .source.path }}'
