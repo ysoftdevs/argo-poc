@@ -3,8 +3,8 @@
   "source": {
     "repoURL": "https://github.com/ysoftdevs/argo-poc.git",
     "path": "helm-repo/traefik/traefik-35.0.0",
-    "chartRevision": "traefik",
-    "valuesRevision": "traefik",
+    "chartRevision": "main",
+    "valuesRevision": "main",
     "chart": ""
   },
   "destination": {
