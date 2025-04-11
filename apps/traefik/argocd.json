@@ -25,7 +25,7 @@
       "enabled": true,
       "revision": "test"
     },
-    "dev": {
+    "safeqcloud-dev": {
       "enabled": true,
     },
     "ohio": {
