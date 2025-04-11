@@ -23,7 +23,7 @@
   "clusters": {
     "control-plane-dev": {
       "enabled": true,
-      "revision": "test"
+      "revision": "test2"
     },
     "ohio": {
       "enabled": false
