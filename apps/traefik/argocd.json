@@ -25,6 +25,9 @@
       "enabled": true,
       "revision": "test"
     },
+    "dev": {
+      "enabled": true,
+    },
     "ohio": {
       "enabled": false
     }
